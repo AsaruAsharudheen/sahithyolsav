@@ -152,7 +152,7 @@
   font-size: 1.05rem;
   line-height: 1.6;
   color: #222;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -161,11 +161,11 @@
   line-height: 1.8;
   color: #555;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .organizer-signature {
-  margin-top: 40px;
+  margin-top: 20px;
   font-family: 'Playfair Display', serif;
   font-style: italic;
   color: var(--c5); /* Palette pink for signature */
