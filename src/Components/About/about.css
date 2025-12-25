@@ -114,6 +114,10 @@
   font-weight: 700;
   color: #555;
 }
+.about-content{
+  height: 50vh;
+  width: 100%;
+}
 
 /* Content Side */
 .about-tag {
