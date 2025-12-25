@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
+
+/* --- 1. PAGE CONTAINER --- */
+.timeline-page {
+  background-color: #fdfbf7;
+  padding: 5% 20px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* --- 2. HEADER SECTION --- */
+.header-section {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.sub-heading {
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: #b8860b;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.main-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  background: linear-gradient(180deg, #1a1a1a 30%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 auto 20px;
+  font-weight: 700;
+}
+
+.sponsors-accent-gradient {
+  width: 80px;
+  height: 3px;
+  background: #b8860b;
+  margin: 0 auto;
+}
+
+/* --- 3. TIMELINE STRUCTURE --- */
+.timeline-structure {
+  position: relative;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+/* Central Vertical Line */
+.vertical-spine {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.timeline-entry {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Positioning for Zig-Zag */
+.timeline-entry.odd {
+  flex-direction: row;
+  transform: translateX(-50px);
+}
+
+.timeline-entry.even {
+  flex-direction: row-reverse;
+  transform: translateX(50px);
+}
+
+/* Reveal class added by JS */
+.timeline-entry.reveal {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- 4. COLOR PALETTE (PER DIV) --- */
+.timeline-entry:nth-child(5n + 1) .glass-card { background-color: #ed7869; }
+.timeline-entry:nth-child(5n + 1) .node-outer { border-color: #ed7869; }
+.timeline-entry:nth-child(5n + 1) .node-inner { background-color: #ed7869; }
+.timeline-entry:nth-child(5n + 1) .horizontal-connector { background-color: #ed7869; }
+
+.timeline-entry:nth-child(5n + 2) .glass-card { background-color: #fcaf70; }
+.timeline-entry:nth-child(5n + 2) .node-outer { border-color: #fcaf70; }
+.timeline-entry:nth-child(5n + 2) .node-inner { background-color: #fcaf70; }
+.timeline-entry:nth-child(5n + 2) .horizontal-connector { background-color: #fcaf70; }
+
+.timeline-entry:nth-child(5n + 3) .glass-card { background-color: #4bc1ac; }
+.timeline-entry:nth-child(5n + 3) .node-outer { border-color: #4bc1ac; }
+.timeline-entry:nth-child(5n + 3) .node-inner { background-color: #4bc1ac; }
+.timeline-entry:nth-child(5n + 3) .horizontal-connector { background-color: #4bc1ac; }
+
+.timeline-entry:nth-child(5n + 4) .glass-card { background-color: #81b7e5; }
+.timeline-entry:nth-child(5n + 4) .node-outer { border-color: #81b7e5; }
+.timeline-entry:nth-child(5n + 4) .node-inner { background-color: #81b7e5; }
+.timeline-entry:nth-child(5n + 4) .horizontal-connector { background-color: #81b7e5; }
+
+.timeline-entry:nth-child(5n + 5) .glass-card { background-color: #e57f9a; }
+.timeline-entry:nth-child(5n + 5) .node-outer { border-color: #e57f9a; }
+.timeline-entry:nth-child(5n + 5) .node-inner { background-color: #e57f9a; }
+.timeline-entry:nth-child(5n + 5) .horizontal-connector { background-color: #e57f9a; }
+
+/* --- 5. CONNECTORS & NODES --- */
+.node-outer {
+  position: absolute;
+  left: 50%;
+  top: 50%; /* Added to ensure vertical center */
+  transform: translate(-50%, -50%); /* Center circle exactly on spine */
+  width: 24px;
+  height: 24px;
+  background-color: #fdfbf7;
+  border: 3px solid;
+  border-radius: 50%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.node-inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.horizontal-connector {
+  position: absolute;
+  left: 50%;
+  top: 50%; /* Center the line vertically */
+  width: 60px;
+  height: 2px;
+  z-index: 1;
+  opacity: 0.5;
+  transform: translateY(-50%);
+}
+
+.timeline-entry.odd .horizontal-connector { transform: translate(-100%, -50%); }
+.timeline-entry.even .horizontal-connector { transform: translate(0, -50%); }
+
+/* --- 6. CARD STYLES --- */
+.card-wrapper {
+  width: 40%;
+  position: relative;
+}
+
+.glass-card {
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card:hover { transform: translateY(-10px); }
+
+.year-display {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  position: absolute;
+  right: 20px;
+  top: 35px;
+  opacity: 0.15;
+  color: white;
+}
+
+.edition-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.luxury-divider {
+  width: 40px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin: 15px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.location-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.location-name {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+}
+
+/* --- 7. MOBILE RESPONSIVE (CORRECTED) --- */
+
+@media (max-width: 850px) {
+  .header-section {
+    margin-bottom: 60px; /* Reduced gap for mobile */
+  }
+
+  .main-heading {
+    margin-top: 15px; /* Added gap between sub-heading and title */
+    font-size: 2.2rem;
+  }
+
+  .vertical-spine {
+    left: 30px;
+    transform: none;
+  }
+
+  .node-outer {
+    left: 30px;
+    transform: translate(-50%, -50%); /* Centered on spine */
+  }
+
+  .horizontal-connector {
+    left: 30px;
+    width: 30px;
+    transform: translateY(-50%) !important;
+  }
+
+  .timeline-entry {
+    flex-direction: row !important;
+    margin-bottom: 40px;
+    transform: none !important;
+  }
+
+  .card-wrapper {
+    width: calc(100% - 80px);
+    margin-left: 80px;
+  }
+
+  .year-display {
+    font-size: 2.5rem;
+    right: 15px;
+    top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-section {
+    margin-bottom: 40px;
+  }
+
+  .sub-heading {
+    letter-spacing: 3px;
+    font-size: 0.65rem;
+  }
+
+  .main-heading {
+    width: 100%;
+    margin-top: 10px; /* Specific gap for small phones */
+    font-size: 1.8rem;
+  }
+
+  .vertical-spine {
+    left: 20px;
+  }
+  
+  .timeline-structure{
+    max-width: 100%;
+    width: 100%;
+    padding-top: 0px;
+  }
+
+  .node-outer {
+    left: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .node-inner {
+    width: 8px;
+    height: 8px;
+  }
+
+  .horizontal-connector {
+    left: 20px;
+    width: 20px;
+  }
+
+  .card-wrapper {
+    margin-left: 55px;
+    width: calc(100% - 65px);
+  }
+
+  .glass-card {
+    padding: 25px 20px;
+  }
+
+  .edition-name {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,217 @@
+/* =========================
+   NAVBAR WRAPPER
+========================= */
+.navbra-section {
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 36px;
+  z-index: 1000;
+/* background-color: black; */
+  transition: all 0.35s ease;
+}
+
+/* =========================
+   STICKY SCROLL STATE
+========================= */
+.navbra-section.sticky {
+  top: 0;
+  width: 100%;
+  height: 74px;
+  border-radius: 0;
+height: 10vh;
+  /* 🔮 Glass effect */
+  background: rgba(20, 25, 40, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================
+   LEFT NAV MENU
+========================= */
+.first-navbar {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+
+  padding: 20px 36px;
+  transition: all 0.3s ease;
+}
+
+/* MENU ITEMS */
+.first-navbar p {
+  font-size: 22px;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+/* Underline effect */
+.first-navbar p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background: #ffb400;
+  transition: width 0.35s ease;
+}
+
+.first-navbar p:hover::after {
+  width: 100%;
+}
+
+.first-navbar p:hover {
+  color: #ffdb7d;
+}
+
+/* ACTIVE */
+.first-navbar p.active {
+  color: #ffb400;
+}
+
+.first-navbar p.active::after {
+  width: 100%;
+}
+
+/* =========================
+   RIGHT CTA BUTTON
+========================= */
+.second-navbar button {
+  padding: 14px 34px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  color: #ffffff;
+  background-color: #ed7869;
+  font-family: var(--font-main);
+
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* Button hover */
+.second-navbar button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px #ed7869;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .navbra-section {
+    height: 60px;
+    padding: 0 20px;
+  }
+
+  .first-navbar {
+    gap: 20px;
+    padding: 14px 20px;
+  }
+
+  .first-navbar p {
+    font-size: 14px;
+  }
+
+  .second-navbar button {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+}
+/* =========================
+   HAMBURGER BUTTON (Hidden on Desktop)
+========================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hamburger to X Animation */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* =========================
+   RESPONSIVE LOGIC
+========================= */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex; /* Show hamburger on mobile */
+  }
+
+  .first-navbar {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden off-screen */
+    width: 70%;
+    height: 100vh;
+    background: rgba(13, 1, 26, 0.98); /* Deep dark background */
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px !important;
+    transition: right 0.5s ease;
+    z-index: 1500;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+  }
+
+  /* When menu is open */
+  .first-navbar.mobile-visible {
+    right: 0;
+  }
+
+  .first-navbar p {
+    font-size: 20px !important;
+  }
+
+  .navbra-section {
+    padding: 0 20px;
+  }
+
+  .second-navbar button {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+}

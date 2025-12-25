@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
+:root {
+  --c1: #ed7869;
+  --c2: #fcaf70;
+  --c3: #4bc1ac;
+  --c4: #81b7e5;
+  --c5: #e57f9a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* Background Slide Styling */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 2s ease-in-out; /* Slower crossfade for premium feel */
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+  animation: slowZoom 12s linear infinite alternate;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8));
+  z-index: 3;
+}
+
+/* Content Animation Logic */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  width: 50%; /* Increased for better line breaks on desktop */
+  color: white;
+}
+
+/* Individual Content Animations */
+.hero-tagline {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: 0.9rem;
+  color: var(--c2);
+  display: block;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: contentSlideUp 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation-delay: 0.5s;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.1;
+  opacity: 0;
+  animation: contentSlideUp 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation-delay: 0.8s;
+  color: var(--c2);
+
+}
+
+.hero-title span {
+  color: var(--c4);
+}
+
+.hero-palette-line {
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(to right, var(--c1), var(--c3), var(--c5));
+  margin: 35px auto 0;
+  border-radius: 10px;
+  opacity: 0;
+  animation: contentSlideUp 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation-delay: 1.1s;
+}
+
+/* Animations */
+@keyframes contentSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.15); }
+}
+
+/* Navigation Dots */
+.hero-dots {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  display: flex;
+  gap: 15px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.dot.active { 
+  transform: scale(1.5); 
+}
+.dot-1.active { background-color: var(--c1); box-shadow: 0 0 15px var(--c1); }
+.dot-2.active { background-color: var(--c3); box-shadow: 0 0 15px var(--c3); }
+.dot-3.active { background-color: var(--c4); box-shadow: 0 0 15px var(--c4); }
+.dot-4.active { background-color: var(--c5); box-shadow: 0 0 15px var(--c5); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section { height: 100vh; }
+  .hero-content { width: 90%; top: 45%; }
+  .hero-dots { bottom: 30px; }
+}

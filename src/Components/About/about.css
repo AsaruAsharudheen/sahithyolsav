@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
+
+/* Defining your Palette for the About Page */
+:root {
+  --c1: #ed7869;
+  --c2: #fcaf70;
+  --c3: #4bc1ac;
+  --c4: #81b7e5;
+  --c5: #e57f9a;
+  --gold-primary: #b8860b;
+}
+
+/* --- ANIMATION HIDDEN STATES --- */
+.about-visual, 
+.about-tag, 
+.about-title, 
+.about-accent-gradient, 
+.about-text p, 
+.organizer-signature {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* --- ANIMATION TRIGGERED STATES --- */
+.reveal .about-visual { opacity: 1; transform: translateY(0); }
+.reveal .about-tag { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+.reveal .about-title { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+.reveal .about-accent-gradient { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+.reveal .about-text p:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.6s; }
+.reveal .about-text p:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.7s; }
+.reveal .about-text p:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.8s; }
+.reveal .organizer-signature { opacity: 1; transform: translateY(0); transition-delay: 1s; }
+
+.about-section {
+  background-color: #fdfbf7;
+  padding: 5% 5%;
+  overflow: hidden;
+}
+
+.about-container {
+  max-width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Visual Side - Frame using Palette */
+.about-visual {
+  position: relative;
+  padding: 20px;
+}
+
+.frame-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 85%;
+  height: 90%;
+  /* Using a gradient of your palette for the frame */
+  border: 3px solid var(--c3); 
+  border-image: linear-gradient(to bottom right, var(--c1), var(--c2), var(--c3)) 1;
+  z-index: 1;
+}
+
+.about-image {
+  position: relative;
+  z-index: 2;
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.07);
+}
+
+.about-image img {
+  height: 50vh;
+  width: 80vh;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Experience Box with Gradient Palette */
+.experience-box-wrapper {
+  position: absolute;
+  bottom: -15px;
+  right: -5px;
+  padding: 5px;
+  background: linear-gradient(45deg, var(--c1), var(--c2), var(--c3), var(--c4), var(--c5));
+  z-index: 3;
+  border-radius: 12px;
+}
+
+.experience-box {
+  background: #fff; /* White inner for readability */
+  padding: 20px 30px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.exp-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  display: block;
+  line-height: 1;
+  background: linear-gradient(to right, var(--c1), var(--c5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.exp-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #555;
+}
+
+/* Content Side */
+.about-tag {
+  color: var(--c1); /* Use palette coral for tag */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.about-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: #1a1a1a;
+  margin: 15px 0;
+  background: linear-gradient(180deg, #1a1a1a 30%, var(--gold-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-title span {
+  color: var(--c4); /* Use palette blue for emphasis */
+}
+
+/* Multi-color accent line */
+.about-accent-gradient {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, var(--c1), var(--c2), var(--c3), var(--c4), var(--c5));
+  margin-bottom: 40px;
+  border-radius: 2px;
+}
+
+.about-text .highlight-p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #222;
+  margin-bottom: 25px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.about-text .standard-p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin-bottom: 20px;
+}
+
+.organizer-signature {
+  margin-top: 40px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--c5); /* Palette pink for signature */
+  font-size: 1.1rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding-top: 20px;
+}
+
+/* Responsive Improvements */
+@media (max-width: 992px) {
+  .about-section {
+    padding: 80px 6%; /* Reduced vertical padding for mobile */
+  }
+
+  .about-container {
+    grid-template-columns: 100%; /* Single column */
+    gap: 60px;
+    max-width: 100%;
+  }
+
+  /* Visual Side - Premium Scaling */
+  .about-visual {
+    width: 90%; /* Percentage width for container */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-image {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .about-image img {
+    /* Switching from vh/vw to percentage for better mobile aspect ratio */
+    width: 100%; 
+    height: auto; 
+    min-height: 300px;
+    object-fit: cover;
+  }
+
+  .frame-decoration {
+    width: 90%; /* Frame scales with the image */
+    height: 90%;
+    top: -10px;
+    left: -10px;
+  }
+
+  /* Experience Box - Floating Center */
+  .experience-box-wrapper {
+    right: 5%; /* Floating slightly off-center for premium asymmetry */
+    bottom: -20px;
+    transform: none;
+    padding: 3px; /* Slightly thinner border on mobile */
+  }
+
+  .experience-box {
+    padding: 15px 20px;
+  }
+
+  .exp-number {
+    font-size: 2.2rem;
+  }
+
+  /* Content Side - Typography scaling */
+  .about-content {
+    text-align: left; /* Keep left-aligned for premium editorial look */
+    padding: 0 2%;
+  }
+
+  .about-tag {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+  }
+
+  .about-title {
+    font-size: clamp(2rem, 8vw, 2.5rem); /* Fluid typography */
+    line-height: 1.2;
+  }
+
+  .about-accent-gradient {
+    width: 25%; /* Percentage width for the accent line */
+    margin: 20px 0 30px 0;
+  }
+
+  .about-text .highlight-p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .about-text .standard-p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #666;
+  }
+
+  .organizer-signature {
+    font-size: 1rem;
+    margin-top: 30px;
+  }
+}
+
+/* Extra small devices adjustment */
+@media (max-width: 480px) {
+  .about-section {
+    padding: 60px 4%;
+  }
+  
+  .experience-box-wrapper {
+    right: 0;
+    width: 140px; /* Fixed small width for very small screens */
+  }
+}

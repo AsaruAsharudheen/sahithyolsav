@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@300;600;700&display=swap');
+
+.stats-wrapper {
+  background-color: #fdfbf7; /* Ivory base */
+  padding: 5% 5%;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 Columns */
+  gap: 20px; /* Space between the separate colored cards */
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* 5-Color Palette Cycle for Separate Cards */
+.stat-card:nth-child(5n+1) { background-color: #ed7869; }
+.stat-card:nth-child(5n+2) { background-color: #fcaf70; }
+.stat-card:nth-child(5n+3) { background-color: #4bc1ac; }
+.stat-card:nth-child(5n+4) { background-color: #81b7e5; }
+.stat-card:nth-child(5n+5) { background-color: #e57f9a; }
+
+.stat-card {
+  padding: 50px 20px;
+  text-align: center;
+  /* border-radius: 15px;  */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* Luxury Number Style (White for colored cards) */
+.stat-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: #ffffff; /* White text */
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+/* Label Style (White for colored cards) */
+.stat-card p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  font-weight: 700;
+  margin: 0;
+}
+
+/* =========================
+   MOBILE RESPONSIVE SYSTEM
+========================= */
+
+@media (max-width: 1024px) {
+  .stats-grid {
+    /* 3 columns for tablets */
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 95%;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-wrapper {
+    padding: 30px 4%;
+  }
+
+  .stats-grid {
+    /* 2 columns for mobile as requested */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px;
+  }
+
+  .stat-card {
+    /* Reduce vertical padding for better balance on small screens */
+    padding: 40px 15px;
+    border-radius: 12px;
+  }
+
+  .stat-card h3 {
+    /* Slightly smaller numbers for mobile */
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+
+  .stat-card p {
+    /* Adjust text for small screens */
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 400px) {
+  .stats-grid {
+    /* Very tight gap for extremely small phones */
+    gap: 8px;
+  }
+  
+  .stat-card {
+    padding: 30px 10px;
+  }
+}
