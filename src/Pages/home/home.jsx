@@ -13,12 +13,12 @@ const Home = () => {
     <>
       <Hero />
       <ProgramStatsAlt />
-      <About/>
-      <Sponsors/>
-      <Timeline/>
-      <RelatedEvents/>
-      <PinterestGallery/>
-      <Footer/>
+      <About />
+      <Sponsors />
+      <Timeline />
+      <RelatedEvents />
+      <PinterestGallery />
+      <Footer />
     </>
   );
 };
