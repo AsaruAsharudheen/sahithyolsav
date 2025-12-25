@@ -114,10 +114,6 @@
   font-weight: 700;
   color: #555;
 }
-.about-content{
-  height: 50vh;
-  width: 100%;
-}
 
 /* Content Side */
 .about-tag {
@@ -153,7 +149,7 @@
 }
 
 .about-text .highlight-p {
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   line-height: 1.6;
   color: #222;
   margin-bottom: 25px;
@@ -161,7 +157,7 @@
 }
 
 .about-text .standard-p {
-  font-size: 1rem;
+  font-size: 0.7rem;
   line-height: 1.8;
   color: #555;
   font-family: 'Plus Jakarta Sans', sans-serif;
