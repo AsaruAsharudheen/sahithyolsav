@@ -49,8 +49,8 @@
 .sponsor-card:nth-child(4) { --card-accent: var(--c4); background-color: #f5faff; }
 
 .sponsor-card {
-  width: 220px;
-  height: 140px;
+  width: 22vh;
+  height: 14vh;
   border-radius: 15px;
   display: flex;
   align-items: center;
