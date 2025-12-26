@@ -21,7 +21,8 @@ const PinterestGallery = () => {
     <section className="pinterest-pure-section">
       {/* The Section Heading stays here */}
       <div className="gallery-header">
-        <span className="gallery-pretitle">VISUAL COLLECTIONS</span>
+        <span className="sponsors-tag">VISUAL COLLECTIONS</span>
+
         <h1 className="main-heading">
           Moments <span>Captured</span>
         </h1>
