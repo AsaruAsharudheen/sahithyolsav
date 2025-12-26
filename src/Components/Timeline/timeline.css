@@ -258,6 +258,9 @@
 }
 
 @media (max-width: 480px) {
+  .timeline-page{
+    padding-top: 15%;
+  }
   .header-section {
     margin-bottom: 40px;
   }
