@@ -174,6 +174,78 @@
   padding-top: 20px;
 }
 
+
+
+
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .about-section {
+    padding: 6% 4%; /* Slightly tighter padding */
+  }
+
+  .about-container {
+    max-width: 95%; /* Use more screen width */
+    gap: 40px; /* Reduce the large 80px gap */
+    grid-template-columns: 1.1fr 0.9fr; /* Give visual side slightly more room */
+  }
+
+  /* Adjust visual side for tablet aspect ratios */
+  .about-image img {
+    height: 40vh; /* Reduce height from 50vh to keep content on screen */
+    width: 100%; /* Allow it to fill its container */
+    object-fit: cover;
+  }
+
+  .frame-decoration {
+    width: 90%;
+    height: 95%;
+  }
+
+  /* Scaling the Experience Box for Tablet */
+  .experience-box {
+    padding: 15px 20px;
+  }
+
+  .exp-number {
+    font-size: 2.2rem;
+  }
+
+  /* Typography Adjustments */
+  .about-title {
+    font-size: 2.2rem; /* Lock size for consistent tablet look */
+    margin: 10px 0;
+  }
+
+  .about-accent-gradient {
+    margin-bottom: 25px; /* Bring text closer to title */
+  }
+
+  .about-text .highlight-p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .about-text .standard-p {
+    font-size: 0.85rem; /* Increase from 0.7rem for better tablet readability */
+    line-height: 1.6;
+  }
+
+  .organizer-signature {
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 /* Responsive Improvements */
 @media (max-width: 992px) {
   .about-section {

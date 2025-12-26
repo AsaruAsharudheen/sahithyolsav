@@ -107,6 +107,78 @@
 
 
 
+
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  /* --- Section Spacing --- */
+  .about-section {
+    padding: 60px 4%;
+  }
+
+  .about-container {
+    max-width: 95%;
+    gap: 40px; /* Reducing the large desktop gap */
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* --- Image Scaling --- */
+  .about-image img {
+    /* Adjusting from vh/vw to fixed responsive height for tablet */
+    height: 400px; 
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .frame-decoration {
+    width: 92%;
+    height: 92%;
+  }
+
+  /* --- Experience Box Adjustments --- */
+  .experience-box-wrapper {
+    right: -10px;
+    bottom: -10px;
+  }
+
+  .experience-box {
+    padding: 15px 20px;
+  }
+
+  .exp-number {
+    font-size: 2.2rem;
+  }
+
+  /* --- Typography Scaling --- */
+  .about-title {
+    font-size: 2.2rem;
+    margin: 10px 0;
+  }
+
+  .about-accent-gradient {
+    margin-bottom: 25px;
+  }
+
+  .about-text .highlight-p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .about-text .standard-p {
+    font-size: 0.85rem; /* Increased from 0.7rem for better tablet legibility */
+    line-height: 1.6;
+  }
+
+  .organizer-signature {
+    margin-top: 20px;
+    padding-top: 15px;
+  }
+}
+
+
+
+
+
+
 /* =========================
    MOBILE RESPONSIVE SYSTEM
 ========================= */
