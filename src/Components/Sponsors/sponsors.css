@@ -103,76 +103,33 @@
 
 
 
-
-
-
-
-
-
 @media (min-width: 901px) and (max-width: 1200px) {
-  /* --- Section Spacing --- */
-  .about-section {
-    padding: 60px 4%;
+  .sponsors-grid {
+    /* Set to 4 columns in one line */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    max-width: 95%; /* Allow more width to fit all 4 comfortably */
+    margin: 0 auto;
   }
 
-  .about-container {
-    max-width: 95%;
-    gap: 40px; /* Reducing the large desktop gap */
-    grid-template-columns: 1fr 1fr;
+  .sponsor-card {
+    /* Reset from vh units to ensure they fit the grid column */
+    width: 100%; 
+    height: 120px;
+    padding: 15px;
   }
 
-  /* --- Image Scaling --- */
-  .about-image img {
-    /* Adjusting from vh/vw to fixed responsive height for tablet */
-    height: 400px; 
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .frame-decoration {
-    width: 92%;
-    height: 92%;
-  }
-
-  /* --- Experience Box Adjustments --- */
-  .experience-box-wrapper {
-    right: -10px;
-    bottom: -10px;
-  }
-
-  .experience-box {
-    padding: 15px 20px;
-  }
-
-  .exp-number {
-    font-size: 2.2rem;
-  }
-
-  /* --- Typography Scaling --- */
-  .about-title {
-    font-size: 2.2rem;
-    margin: 10px 0;
-  }
-
-  .about-accent-gradient {
-    margin-bottom: 25px;
-  }
-
-  .about-text .highlight-p {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  .about-text .standard-p {
-    font-size: 0.85rem; /* Increased from 0.7rem for better tablet legibility */
-    line-height: 1.6;
-  }
-
-  .organizer-signature {
-    margin-top: 20px;
-    padding-top: 15px;
+  .sponsors-title {
+    font-size: 2.6rem;
   }
 }
+
+
+
+
+
+
 
 
 
@@ -256,3 +213,12 @@
     height: 100px;
   }
 }
+
+
+
+
+
+
+
+
+
