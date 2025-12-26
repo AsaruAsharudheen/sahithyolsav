@@ -15,8 +15,8 @@ const Home = () => {
       <ProgramStatsAlt />
       <About />
       <Sponsors />
-      <Timeline />
       <RelatedEvents />
+      <Timeline />
       <PinterestGallery />
       <Footer />
     </>
