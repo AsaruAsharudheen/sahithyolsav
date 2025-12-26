@@ -38,7 +38,7 @@ const Timeline = () => {
   return (
     <div className="timeline-page">
       <div className="header-section">
-        <p className="sub-heading">A Decade of Cultural Legacy</p>
+        <span className="sponsors-tag">A Decade of Cultural Legacy</span>
 
         <h1 className="main-heading">Sahityotsav Journey</h1>
                 <div className="sponsors-accent-gradient"></div>
