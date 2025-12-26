@@ -69,7 +69,7 @@
 @media (min-width: 901px) and (max-width: 1200px) {
   .stats-grid {
     /* Set to 2 columns to create the 2-line (2x2) grid model */
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     max-width: 80%; /* Narrower width looks more premium for a 2x2 layout */
     gap: 25px; /* Slightly larger gap to fill the screen space beautifully */
   }
