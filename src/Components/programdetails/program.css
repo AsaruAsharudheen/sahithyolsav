@@ -97,7 +97,14 @@
    MOBILE RESPONSIVE SYSTEM
 ========================= */
 
-
+@media (max-width: 1024px) {
+  .stats-grid {
+    /* 3 columns for tablets */
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 95%;
+    gap: 15px;
+  }
+}
 
 @media (max-width: 768px) {
   .stats-wrapper {
