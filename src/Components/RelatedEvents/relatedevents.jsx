@@ -59,7 +59,8 @@ const RelatedEvents = () => {
   return (
     <section className="events-container">
       <div className="events-header">
-        <span className="events-subtitle">Explore Our</span>
+        <span className="sponsors-tag">Explore Our</span>
+
         <h1 className="main-heading">Related Events</h1>
 
         <div className="title-underline"></div>
